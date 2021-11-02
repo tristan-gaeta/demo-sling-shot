@@ -19,7 +19,7 @@ class Game {
 
         this.sling = Matter.Constraint.create({
             pointA: { x: 200, y: 400 },
-            bodyB: this.boxA,
+            bodyB: this.rock,
             length: 0,
             stiffness: 0.01,
             render: {
@@ -76,7 +76,7 @@ class Game {
 
         // add objects and run
         Matter.Render.run(this.render)
-        Matter.Composite.add(this.engine.world, [this.boxA, this.boxB, this.boxC, this.boxD, this.ground, this.sling, this.mc]);
+        Matter.Composite.add(this.engine.world, [this.rock, this.boxB, this.boxC, this.boxD, this.ground, this.sling, this.mc]);
         Matter.Runner.run(this.engine)
     }
 }
